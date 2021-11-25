@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "io.grpc.examples.calculator";
+option java_outer_classname = "CalculatorProto";
+option objc_class_prefix = "CLWS";
+
+package calculator;
+
+service CalculatorService {
+  rpc Add(NumberCouple) returns (Number) {}
+  rpc Sub(NumberCouple) returns (Number) {}
+  rpc Mul(NumberCouple) returns (Number) {}
+  rpc Div(NumberCouple) returns (Number) {}
+  rpc AddAsync(stream Number) returns (stream Number) {}
+}
+
+message Number {
+  double value = 1;
+}
+
+message NumberCouple {
+  Number num1 = 1;
+  Number num2 = 2;
+}
