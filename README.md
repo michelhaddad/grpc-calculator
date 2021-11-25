@@ -1,4 +1,4 @@
-gRPC Examples
+gRPC Calculator example
 ==============================================
 
 The examples require `grpc-java` to already be built. You are strongly encouraged
